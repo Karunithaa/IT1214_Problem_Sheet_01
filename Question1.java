@@ -43,7 +43,7 @@ class Classroom {
     private int studentCount;
 
     public Classroom() {
-        students = new Student[10];  // Maximum 10 students
+        students = new Student[10];
         studentCount = 0;
     }
 
@@ -79,16 +79,16 @@ class Classroom {
 
 class Main {
     public static void main(String[] args) {
-        Classroom classroom = new Classroom();
+        Classroom c1 = new Classroom();
 
 
-        classroom.addStudent(new Student(101, "Alice Smith", 12));
-        classroom.addStudent(new Student(102, "Bob Jones", 15));
-        classroom.addStudent(new Student(103, "Carol Lee", 10));
+        c1.addStudent(new Student(101, "Alice Smith", 12));
+        c1.addStudent(new Student(102, "Bob Jones", 15));
+        c1.addStudent(new Student(103, "Carol Lee", 10));
 
-        classroom.updateAttendance(102, 16);
-        classroom.updateAttendance(104, 9);
+        c1.updateAttendance(102, 16);
+        c1.updateAttendance(104, 9);
 
-        classroom.displayAllStudents();
+        c1.displayAllStudents();
     }
 }

@@ -34,9 +34,7 @@ class Vehicle {
     }
 
     public String toString() {
-        return "License Plate: " + licensePlate +
-               ", Owner: " + ownerName +
-               ", Hours Parked: " + hoursParked;
+        return "License Plate: " + licensePlate +", Owner: " + ownerName +", Hours Parked: " + hoursParked;
     }
 }
 
@@ -45,7 +43,7 @@ class ParkingLot {
     private int vehicleCount;
 
     public ParkingLot() {
-        vehicles = new Vehicle[5]; // Max 5 vehicles
+        vehicles = new Vehicle[5];
         vehicleCount = 0;
     }
 
@@ -61,7 +59,6 @@ class ParkingLot {
         boolean found = false;
         for (int i = 0; i < vehicleCount; i++) {
             if (vehicles[i].getLicensePlate().equalsIgnoreCase(licensePlate)) {
-                // Shift the remaining vehicles
                 for (int j = i; j < vehicleCount - 1; j++) {
                     vehicles[j] = vehicles[j + 1];
                 }
@@ -90,14 +87,14 @@ class ParkingLot {
 
 class Main {
     public static void main(String[] args) {
-        ParkingLot parkingLot = new ParkingLot();
+        ParkingLot P1 = new ParkingLot();
 
-        parkingLot.parkVehicle(new Vehicle("ABC123", "John Doe", 2));
-        parkingLot.parkVehicle(new Vehicle("XYZ789", "Jane Smith", 4));
-        parkingLot.parkVehicle(new Vehicle("LMN456", "Bob Brown", 1));
+        P1.parkVehicle(new Vehicle("ABC123", "John Doe", 2));
+        P1.parkVehicle(new Vehicle("XYZ789", "Jane Smith", 4));
+        P1.parkVehicle(new Vehicle("LMN456", "Bob Brown", 1));
 
-        parkingLot.removeVehicle("XYZ789");
+        P1.removeVehicle("XYZ789");
 
-        parkingLot.displayVehicles();
+        P1.displayVehicles();
     }
 }

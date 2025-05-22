@@ -41,9 +41,7 @@ class BankAccount {
     }
 
     public String toString() {
-        return "Account Number: " + accountNumber +
-               ", Holder: " + accountHolder +
-               ", Balance: " + String.format("%.2f", balance);
+        return "Account Number: " + accountNumber +", Holder: " + accountHolder +", Balance: " + balance;
     }
 }
 
@@ -97,14 +95,14 @@ class Bank {
 
 class Main {
     public static void main(String[] args) {
-        Bank bank = new Bank();
+        Bank b1 = new Bank();
 
-        bank.addAccount(new BankAccount(1001, "Alice", 5000.0));
-        bank.addAccount(new BankAccount(1002, "Bob", 3000.0));
+        b1.addAccount(new BankAccount(1001, "Alice", 5000.0));
+        b1.addAccount(new BankAccount(1002, "Bob", 3000.0));
 
-        bank.withdrawFromAccount(1001, 6000.0); 
-        bank.withdrawFromAccount(1002, 1000.0);
+        b1.withdrawFromAccount(1001, 6000.0); 
+        b1.withdrawFromAccount(1002, 1000.0);
 
-        bank.displayAllAccounts();
+        b1.displayAllAccounts();
     }
 }

@@ -80,7 +80,6 @@ class BookingSystem {
         boolean found = false;
         for (int i = 0; i < ticketCount; i++) {
             if (tickets[i].getTicketNumber() == ticketNumber) {
-                // Shift remaining tickets to fill the gap
                 for (int j = i; j < ticketCount - 1; j++) {
                     tickets[j] = tickets[j + 1];
                 }
@@ -109,17 +108,15 @@ class BookingSystem {
 
 class Main {
     public static void main(String[] args) {
-        BookingSystem system = new BookingSystem();
+        BookingSystem bs = new BookingSystem();
 
-        system.bookTicket(1, "Alice", 1);
-        system.bookTicket(2, "Bob", 2);
-        system.bookTicket(3, "Carol", 3);
+        bs.bookTicket(1, "Alice", 1);
+        bs.bookTicket(2, "Bob", 2);
+        bs.bookTicket(3, "Carol", 3);
 
-        system.cancelTicket(2);
-
-        system.bookTicket(4, "David", 2);
-
-        system.displayAllTickets();
+        bs.cancelTicket(2);
+        bs.bookTicket(4, "David", 2);
+        bs.displayAllTickets();
     }
 }
 
